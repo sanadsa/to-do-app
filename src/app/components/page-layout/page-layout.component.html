@@ -1,0 +1,7 @@
+<div class="layout">
+  <input type="text">
+  <label>Add to-do</label>
+  <div *ngFor="let task of tasks">
+    <task [text]="task.text" [isCompleted]="task.isCompleted"></task>
+  </div>
+</div>
