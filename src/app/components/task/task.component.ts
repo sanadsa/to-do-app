@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ToDoTask } from 'src/app/common/interfaces/ToDoTask';
 
 @Component({
   selector: 'task',
@@ -6,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
-  @Input() text: string = '';
-  @Input() isCompleted: boolean = false;
+  @Input() task: ToDoTask;
+  @Output() taskDoneEvent = new EventEmitter<boolean>();
 
   constructor() { }
 

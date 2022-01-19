@@ -1,7 +1,16 @@
 <div class="layout">
-  <input type="text">
-  <label>Add to-do</label>
+  <div class="addTask">
+    <mat-form-field class="inputTask" appearance="fill">
+      <mat-label>Add task</mat-label>
+      <input matInput placeholder="Ex. Finish tasks" [(ngModel)]="taskToAdd">
+    </mat-form-field>
+    <button class="addButton" [disabled]="taskToAdd === ''" (click)="addTask()" mat-raised-button color="primary">Add</button>
+    <div class="showCompleted">
+      <button mat-stroked-button color="primary" (click)="isShowCompleted = !isShowCompleted">{{!isShowCompleted ? 'Show Completed' : 'Hide Completed'}}</button>
+    </div>
+  </div>
+
   <div *ngFor="let task of tasks">
-    <task [text]="task.text" [isCompleted]="task.isCompleted"></task>
+    <task *ngIf="!task.isCompleted || (task.isCompleted && isShowCompleted)" [task]="task" (taskDoneEvent)="taskDone(task)"></task>
   </div>
 </div>

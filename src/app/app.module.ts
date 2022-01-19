@@ -7,9 +7,11 @@ import { PageLayoutComponent } from './components/page-layout/page-layout.compon
 import { TaskComponent } from './components/task/task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatCardModule} from '@angular/material/card';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatInputModule} from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {MatInputModule} from '@angular/material/input';
     MatCardModule,
     MatRadioModule,
     MatInputModule,
-    BrowserAnimationsModule
+    MatButtonModule,
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,15 +8,31 @@ import { ToDoTask } from 'src/app/common/interfaces/ToDoTask';
 })
 export class PageLayoutComponent implements OnInit {
   tasks: ToDoTask[] = [
-    { text:'Do a to do app', isCompleted: false},
-    { text:'Another task', isCompleted: false}
+    { id: 1, text: 'Do a to do app', isCompleted: false },
+    { id: 2, text: 'Another task', isCompleted: false }
   ];
+  taskToAdd: string = '';
+  isShowCompleted: boolean = false;
 
   constructor() {
     // get tasks...
   }
 
   ngOnInit(): void {
+  }
+
+  addTask() {
+    this.tasks.push({
+      id: this.tasks[this.tasks.length - 1].id + 1,
+      text: this.taskToAdd,
+      isCompleted: false
+    });
+    this.taskToAdd = '';
+  }
+
+  taskDone(task: ToDoTask) {
+    const index = this.tasks.indexOf(task);
+    this.tasks[index].isCompleted = true;
   }
 
 }

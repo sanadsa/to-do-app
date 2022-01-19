@@ -1,3 +1,4 @@
-<mat-card>
-  <mat-radio-button value="1">{{text}}</mat-radio-button>
+<mat-card class="task">
+  <mat-radio-button (change)="taskDoneEvent.emit()" [class.completed]="task.isCompleted" [name]="task.id.toString()"
+    [checked]="task.isCompleted">{{task.text}}</mat-radio-button>
 </mat-card>

@@ -1,4 +1,28 @@
 .layout {
-  width: 72%;
+  width: 650px;
   margin: auto;
+
+  .addTask {
+    width: 795px;
+    display: flex;
+
+    .inputTask {
+      width: 70%;
+      margin-right: 15px;
+    }
+
+    .addButton {
+      height: 52px;
+      width: 80px;
+    }
+
+    .showCompleted {
+      position: relative;
+      left: 26px;
+
+      button {
+        width: 140px;
+      }
+    }
+  }
 }
